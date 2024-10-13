@@ -1,0 +1,6 @@
+python-whois
+# I think this only works in Linux, doesn't show up in windows
+# smtplib
+# Music tag manager
+# https://github.com/nicfit/eyeD3
+eyed3

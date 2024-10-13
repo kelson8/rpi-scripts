@@ -46,6 +46,8 @@ def cpu_freq():
     cpu_usage = psutil.cpu_freq()
     print("Cpu usage: ")
     # Give the usage in ghz instead of mhz
+    # https://www.rapidtables.com/convert/frequency/mhz-to-ghz.html
+    
     print(f"Cpu frequency Ghz: {cpu_usage.current / 1000 }Ghz")
     print(f"Cpu frequency Mhz: {cpu_usage.current }Mhz")
     # Not needed for the loop
@@ -55,11 +57,13 @@ def cpu_freq():
 
 def print_cpu_freq():
     while True:
-        cpu_freq
         sleep(1)
         os.system("clear")
 
 def disks():
+    # TODO Test this
+    disk_usage = psutil.disk_usage
+    
     print("\nDisk usage: ")
     print(f"Total Disk space: {convert_size(psutil.disk_usage('/').total)}")
     print(f"Disk usage: {convert_size(psutil.disk_usage('/').used)}")
@@ -87,9 +91,10 @@ def print_network():
 # Changed this to use the format below, now each of these can be toggled.
 def print_all():
     cpu_freq_enabled = True
-    disks_enabled = True
+    disks_enabled = False
     network_enabled = True
     
+    # Run this in a loop every second and constantly clear this.
     while True:
         if cpu_freq_enabled:
             cpu_freq()
@@ -101,12 +106,44 @@ def print_all():
         os.system("clear")
         
 
+# TODO Test this
+def print_lcd():
+    cpu_freq_enabled = False
+    disks_enabled = False
+    network_enabled = True
+
+    cpu_usage = psutil.cpu_freq()
+    disk_usage = psutil.disk_usage("/")
+    netusage = psutil.net_io_counters()
+
+
+    # Run this in a loop every second and constantly clear this.
+    while True:
+        if cpu_freq_enabled:
+            # lcd.write(f"Current mhz: {cpu_usage.current}%")
+            pass
+        if disks_enabled:
+            pass
+            # lcd.write(f"Disk usage: {disk_usage.used}%")
+        if network_enabled:
+            pass
+            # Line 1
+            # lcd.write(f"Bytes sent: {netusage.bytes_sent}%")
+            # Line 2
+            # lcd.write(f"Bytes recvd: {netusage.netusage.bytes_recv}%")
 
 
 if __name__ == '__main__':
     try:
 #        main()
         #cpu_freq()
-        print_all()
+        print_lcd = False
+
+        if print_lcd:
+            # Print some of these stats to one of the LCD screens.
+            #print_lcd()
+            pass
+        else:
+            print_all()
     except KeyboardInterrupt:
         exit()
