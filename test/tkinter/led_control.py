@@ -1,5 +1,12 @@
 from tkinter import *
 from tkinter import ttk, messagebox
+from gpiozero import LED, Button
+from time import sleep
+
+green_led = LED(16)
+yellow_led = LED(20)
+red_led = LED(21)
+button = Button(4)
 
 # https://tkdocs.com/tutorial/firstexample.html
 # https://realpython.com/python-gui-tkinter/
@@ -27,7 +34,7 @@ mainFrame.grid(column=0, row=0, sticky=(N, W, E, S))
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
-ttk.Label(mainFrame, text="Welcome to the LED Controller.").grid(column=0, row=0, sticky=W)
+ttk.Label(mainFrame, text="Welcome to the LED Controller.").grid(column=0, row=0, sticky=(W, N))
 
 # Begin of label box
 ttk.Label(mainFrame, text="Test: ").grid(column=0, row=1, sticky=NE)
@@ -46,26 +53,21 @@ def print_test1(username):
 
 # TODO Setup this to toggle on/off the leds on the rpi, attach this to the touch screen when I buy it.
 def toggle_green_led():
-    pass
-
-    # if green_led.is_on:
-        # pass
+    green_led.toggle()
 
 def toggle_yellow_led():
-    pass
-
-    # if yellow_led.is_on:
-        # pass
+    yellow_led.toggle()
 
 def toggle_red_led():
-    pass
-
-    # if red_led.is_on:
-        # pass
+    red_led.toggle()
 
 def show_message_box():
     messagebox.showinfo("Info test", "Test message")
 
+def blink_leds():
+    green_led.blink()
+    yellow_led.blink()
+    red_led.blink()
 
 ttk.Button(mainFrame, text="Click me", command=print_test1("kelson8")).grid(column=3, row=3, sticky=W)
 ttk.Button(mainFrame, text="Message Box", command=show_message_box).grid(column=3, row=3, sticky=W)
@@ -74,6 +76,12 @@ ttk.Button(mainFrame, text="Message Box", command=show_message_box).grid(column=
 # ttk.Button(root, text="Turn on green led").grid(column=0, row=2, sticky=E)
 
 ttk.Checkbutton(mainFrame, text="Toggle Green led", onvalue=1, offvalue=0, command=toggle_green_led).grid(column=2, row = 2)
+ttk.Checkbutton(mainFrame, text="Toggle Yellow led", onvalue=1, offvalue=0, command=toggle_yellow_led).grid(column=2, row = 3)
+ttk.Checkbutton(mainFrame, text="Toggle Red led", onvalue=1, offvalue=0, command=toggle_red_led).grid(column=2, row = 4)
+
+ttk.Button(mainFrame, text="Blink leds", command=blink_leds).grid(column=2, row=5, sticky=W)
+ttk.Button(mainFrame, text="Stop blinking leds", command=blink_leds).grid(column=2, row=5, sticky=W)
+
 # ttk.Checkbutton(mainFrame, text="Test", onvalue=1, offvalue=0, command=print_test).grid(column=2, row = 2)
 
 
