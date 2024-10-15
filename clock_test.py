@@ -21,9 +21,9 @@ def clock_function():
         time.sleep(1)
     
         # print()
-        if(os.name == "nt"):
+        if os.name == "nt":
             os.system("cls")
-        elif(os.name == "posix"):
+        elif os.name == "posix":
             os.system("clear")
 
 clock_function()

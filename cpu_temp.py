@@ -46,10 +46,15 @@ def main():
         
         
         
-
+# Check if the system is running on linux, if not error out.
+# I'm not sure how to get cpu temps on Windows in Python.
 if __name__ == '__main__':
     try:
-        main()
+        if os.name == "posix" or os.name == "darwin":
+            main()
+        else:
+            print("Operating system not setup")
+
     except KeyboardInterrupt:
         if os.name == "linux" or os.name == "darwin":
             os.exit()
