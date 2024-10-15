@@ -5,9 +5,9 @@ Scripts and code that I use for my raspberry pi, mostly in python but there may 
 # Files
 
 ### Root folder
-clock_test.py - Show the clock in 24 hour time in a loop on a terminal, I need to set this up to work with 12 hour time also.
-convert_file_sizes.py - Convert file size from bytes to other sizes
-cpu_temp.py - Show the cpu temperature on Linux and possibly Mac, currently not compatible with Windows.
+* clock_test.py - Show the clock in 24 hour time in a loop on a terminal, I need to set this up to work with 12 hour time also.
+* convert_file_sizes.py - Convert file size from bytes to other sizes
+* cpu_temp.py - Show the cpu temperature on Linux and possibly Mac, currently not compatible with Windows.
 
 ### CPlusPlus folder
 * Curl test - Basic test with curl in C++, only tested on Raspberry pi and Linux.
