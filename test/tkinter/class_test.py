@@ -16,63 +16,16 @@ from yt_thumbnail_downloader import download_thumbnail
 
 # TODO Swtich tab_test.py to using classes like this.
 
+#####
+# Functions
+#####
+
 def show_error_message():
     messagebox.showerror("Error test", "Error, mistake made.")
 
-# Test pages
-# class MainPage(tk.Frame):
-#     def __init__(self, parent, controller):
-#         tk.Frame.__init__(self, parent)
-#         label = tk.Label(self, text="Main Page")
-#         label.pack(padx=10, pady=10)
-#
-#         # We use the switch_window_button in order to call the show_frame() method as a lambda function
-#         switch_window_button = tk.Button(
-#             self,
-#             text="Go to the Side Page",
-#             command=lambda: controller.show_frame(SidePage)
-#         )
-#
-#         welcome_label = ttk.Label(self, text="Welcome to the Main tab.")
-#         welcome_label.pack(side="top", fill=tk.X)
-#
-#         # test_label = ttk.Label(self, text="Test")
-#         # test_label.pack(side="top", fill=tk.X)
-#
-#         # Not sure how to get this working with the classes yet.
-#         # quit_button = tk.Button(self, text="Quit", command=self.destroy)
-#         # quit_button.pack(side="top", fill=tk.X)
-#
-#         switch_window_button.pack(side="bottom", fill=tk.X)
-#
-# class SidePage(tk.Frame):
-#     def __init__(self, parent, controller):
-#         tk.Frame.__init__(self, parent)
-#         label = tk.Label(self, text="This is the Side Page")
-#         label.pack(padx=10, pady=10)
-#
-#         switch_window_button = tk.Button(
-#             self,
-#             text="Go to the Completion Screen",
-#             command=lambda: controller.show_frame(CompletionScreen),
-#         )
-#         switch_window_button.pack(side="bottom", fill=tk.X)
-#
-#
-# class CompletionScreen(tk.Frame):
-#     def __init__(self, parent, controller):
-#         tk.Frame.__init__(self, parent)
-#
-#
-#         label = tk.Label(self, text="Completion Screen, we did it!")
-#         label.pack(padx=10, pady=10)
-#         # I'm not exactly sure how this lambda is working.
-#         switch_window_button = ttk.Button(
-#             self, text="Return to menu", command=lambda: controller.show_frame(MainPage)
-#         )
-#         switch_window_button.pack(side="bottom", fill=tk.X)
-
-# End test pages
+#####
+# End functions
+#####
 
 # New
 
@@ -125,32 +78,23 @@ class RegisterPage(tk.Frame):
 
 
         label = tk.Label(self, text="Register page")
-        # label.pack(padx=10, pady=10)
         label.place(relx=0.5, rely=0.1, anchor="center")
-        # label.grid(column=0, row=0, padx=10, pady=5)
 
         username_label = ttk.Label(self, text="Username: ")
-        # username_label.pack(padx=10, pady=10, side=tk.LEFT)
         username_label.grid(column=3, row=1, padx=10, pady=5)
 
         user_name_entry = ttk.Entry(self, textvariable=self.user_name_var)
         user_name_entry.grid(column=4, row=1, padx=10, pady=5)
 
-        # username_entry.pack(padx=10, pady=10, side=tk.LEFT)
-
-
         password_label = ttk.Label(self, text="Password: ")
         password_label.grid(column=3, row=2, padx=10, pady=5)
-        # password_label.pack(padx=10, pady=10, side=tk.LEFT)
 
         password_entry = ttk.Entry(self, textvariable=self.password_var, show="*")
         password_entry.grid(column=4, row=2, padx=10, pady=5)
-        # password_entry.pack(padx=10, pady=10, side=tk.LEFT)
 
         # Register test
         register_button = ttk.Button(self, text="Register", command=register)
         register_button.grid(column=4, row=3, padx=10, pady=5)
-        # register_button.pack(padx=10, pady=10, side=tk.RIGHT)
 
 ######
 # End register tab
@@ -170,9 +114,6 @@ class LoginPage(tk.Frame):
         label = tk.Label(self, text="Login page")
         # This seems to work
         label.place(relx=0.5, rely=0.1, anchor="center")
-        # label.grid(column=0, row=0, padx=10, pady=5)
-
-        # label.pack(padx=10, pady=10)
 
         self.user_name_var = tk.StringVar()
         self.password_var = tk.StringVar()
@@ -215,22 +156,17 @@ class LoginPage(tk.Frame):
 
         username_label = ttk.Label(self, text="Username: ")
         username_label.grid(column=3, row=1, padx=10, pady=5)
-        # username_label.pack(padx=10, pady=10)
         password_label = ttk.Label(self, text="Password: ")
         password_label.grid(column=3, row=2, padx=10, pady=5)
-        # password_label.pack(padx=10, pady=10)
 
         user_name_entry = ttk.Entry(self, textvariable=self.user_name_var)
         user_name_entry.grid(column=4, row=1, padx=10, pady=5)
-        # user_name_entry.pack(padx=10, pady=10)
         password_entry = ttk.Entry(self, textvariable=self.password_var, show="*")
         password_entry.grid(column=4, row=2, padx=10, pady=5)
-        # password_entry.pack(padx=10, pady=10)
 
         # Login test
         login_button = ttk.Button(self, text="Login", command=login)
         login_button.grid(column=4, row=3, padx=10, pady=5)
-        # login_button.pack(padx=10, pady=10)
 
 ######
 # End login tab
@@ -309,6 +245,10 @@ class TestPage(tk.Frame):
         download_thumbnail_button.pack(padx=10, pady=10, side=tk.LEFT)
 
 
+        #####
+        # Test
+        #####
+
         # This works for moving stuff to the right
         # This needs to be below the part that is doing tk.LEFT for the side.
         # test_button1 = ttk.Button(self, text="Test #2")
@@ -316,8 +256,6 @@ class TestPage(tk.Frame):
         #
         # test_label1 = ttk.Label(self, text="Test label")
         # test_label1.pack(padx=10, pady=10, side=tk.RIGHT)
-
-
 
         # https://www.activestate.com/resources/quick-reads/how-to-position-widgets-in-tkinter/
         # test = tk.Label(self, text="red", bg="red", fg="white")
@@ -341,6 +279,9 @@ class TestPage(tk.Frame):
         # ttk.Button(self, text="Minify HTML").grid(column=0, row=6, padx=10, pady=5)
         # ttk.Button(self, text="Beautify HTML").grid(column=0, row=7, padx=10, pady=5)
 
+        #####
+        # End test
+        #####
 ######
 # End test tab
 ######
