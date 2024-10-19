@@ -8,6 +8,7 @@ Scripts and code that I use for my raspberry pi, mostly in python but there may 
 * clock_test.py - Show the clock in 24 hour time in a loop on a terminal, I need to set this up to work with 12 hour time also.
 * convert_file_sizes.py - Convert file size from bytes to other sizes
 * cpu_temp.py - Show the cpu temperature on Linux and possibly Mac, currently not compatible with Windows.
+* raspberry_pi_check.py - Check if the device running is a Raspberry Pi, return false if not Linux or if not a Raspberry pi.
 
 ### CPlusPlus folder
 * Curl test - Basic test with curl in C++, only tested on Raspberry pi and Linux.
@@ -39,3 +40,8 @@ Scripts and code that I use for my raspberry pi, mostly in python but there may 
 ### Tkinter (Under test folder)
 * led_control.py - Contains a led controller using tkinter. 
 * tab_test.py - Most of my testing in tkinter, password hashing, dialog boxes and more.
+* class_test.py - Moved most of the content from tab_test.py into here. Mostly using python classes now 
+ instead of making everything messy
+
+### Database Test (Under test folder)
+* sqlite_db_passwordgen.py - Password generator that makes random passwords go into a db file named db_test.db
