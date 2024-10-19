@@ -42,6 +42,8 @@ Scripts and code that I use for my raspberry pi, mostly in python but there may 
 * tab_test.py - Most of my testing in tkinter, password hashing, dialog boxes and more.
 * class_test.py - Moved most of the content from tab_test.py into here. Mostly using python classes now 
  instead of making everything messy
+* beautify_html.py - Beautify a minified html file
+* minify_html.py - Minify a beautified html file
 
 ### Database Test (Under test folder)
 * sqlite_db_passwordgen.py - Password generator that makes random passwords go into a db file named db_test.db
