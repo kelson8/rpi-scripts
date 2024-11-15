@@ -9,6 +9,8 @@ Scripts and code that I use for my raspberry pi, mostly in python but there may 
 * convert_file_sizes.py - Convert file size from bytes to other sizes
 * cpu_temp.py - Show the cpu temperature on Linux and possibly Mac, currently not compatible with Windows.
 * raspberry_pi_check.py - Check if the device running is a Raspberry Pi, return false if not Linux or if not a Raspberry pi.
+* ssd1306_stats.py - Output current IP address, CPU Percent, CPU Temps, Ram usage, Disk usage, and Network download/upload usage in KB/s.
+* system_stats.py - Test for printing out system stats, mostly used for testing new functions in ssd1306_stats.py
 
 ### CPlusPlus folder
 * Curl test - Basic test with curl in C++, only tested on Raspberry pi and Linux.
